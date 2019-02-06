@@ -4,11 +4,32 @@ require('pry')
 
 
 Student.delete_all()
+House.delete_all()
+
+gryffindor = House.new({
+  "name" => "Gryffindor"
+})
+gryffindor.save()
+
+slytherin = House.new({
+  "name" => "Slytherin"
+})
+slytherin.save()
+
+ravenclaw = House.new({
+  "name" => "Ravenclaw"
+})
+ravenclaw.save()
+
+hufflepuff = House.new({
+  "name" => "Hufflepuff"
+})
+hufflepuff.save()
 
 student1 = Student.new({
   "first_name" => "Luna",
   "last_name" => "Lovegood",
-  "house" => "Ravenclaw",
+  "house_id" => ravenclaw.id,
   "age" => 17
 })
 
@@ -17,7 +38,7 @@ student1.save()
 student2 = Student.new({
   "first_name" => "Hermione",
   "last_name" => "Granger",
-  "house" => "Gryffindor",
+  "house_id" => gryffindor.id,
   "age" => 17
 })
 
@@ -26,31 +47,11 @@ student2.save()
 student3 = Student.new({
   "first_name" => "Cedric",
   "last_name" => "Diggory",
-  "house" => "Hufflepuff",
+  "house_id" => hufflepuff.id,
   "age" => 18
 })
 
 student3.save()
-
-house1 = House.new({
-  "name" => "Gryffindor"
-})
-house1.save()
-
-house2 = House.new({
-  "name" => "Slytherin"
-})
-house2.save()
-
-house3 = House.new({
-  "name" => "Ravenclaw"
-})
-house3.save()
-
-house4 = House.new({
-  "name" => "Hufflepuff"
-})
-house4.save()
 
 binding.pry
 nil
